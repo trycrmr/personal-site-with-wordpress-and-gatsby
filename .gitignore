@@ -1,3 +1,6 @@
+# Terrys ignores
+public/
+
 # Logs
 logs
 *.log
