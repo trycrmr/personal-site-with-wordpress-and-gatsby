@@ -13,15 +13,13 @@ export const BlogPostTemplate = ({
   author,
 }) => {
   return (
-    <section className="section">
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
+    <section>
+      <div>
+        <div>
+          <div>
+            <h1>{title}</h1>
             <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div style={{ marginTop: `4rem` }}>
+            <div>
               <p>
                 {date} - posted by{' '}
                 <Link to={`/author/${author.slug}`}>{author.name}</Link>
@@ -29,7 +27,7 @@ export const BlogPostTemplate = ({
               {categories && categories.length ? (
                 <div>
                   <h4>Categories</h4>
-                  <ul className="taglist">
+                  <ul>
                     {categories.map(category => (
                       <li key={`${category.slug}cat`}>
                         <Link to={`/categories/${category.slug}/`}>
@@ -43,7 +41,7 @@ export const BlogPostTemplate = ({
               {tags && tags.length ? (
                 <div>
                   <h4>Tags</h4>
-                  <ul className="taglist">
+                  <ul>
                     {tags.map(tag => (
                       <li key={`${tag.slug}tag`}>
                         <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>

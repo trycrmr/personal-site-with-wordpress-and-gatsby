@@ -16,20 +16,14 @@ const Navbar = () => (
       }
     `}
     render={data => (
-      <nav className="navbar is-transparent">
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              Home
-            </Link>
+      <nav>
+        <div>
+          <div>
+            <Link to="/">Home</Link>
           </div>
-          <div className="navbar-start">
+          <div>
             {data.allWordpressPage.edges.map(edge => (
-              <Link
-                className="navbar-item"
-                to={edge.node.slug}
-                key={edge.node.slug}
-              >
+              <Link to={edge.node.slug} key={edge.node.slug}>
                 {edge.node.title}
               </Link>
             ))}
