@@ -1,8 +1,9 @@
-$fc: blue; // "font-color"
-$bc: turquoise; // "background-color"
+$fc: black; // "font-color"
+$bc: pink; // "background-color"
 
 .layout {
   background-color: $bc;
   color: $fc;
-  border: 0.2rem solid navy;
+  border: 0.2rem solid whitesmoke;
+  padding: 0.5rem 1rem;
 }

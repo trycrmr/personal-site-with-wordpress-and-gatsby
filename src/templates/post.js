@@ -3,6 +3,36 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import PostCode from '../components/PostCode'
+import parse, { domToReact } from 'html-react-parser'
+
+const getCode = node => {
+  if (node.children.length > 0 && node.children[0].name === 'code') {
+    return node.children[0].children
+  } else {
+    return node.children
+  }
+}
+
+const getLanguage = node => {
+  if (node.attribs.class != null) {
+    // return node.attribs.class <== Doesn't work because wordpress adds a class to the "code" block
+    return 'jsx' // This is adequate because right now because I'd mostly post javascript and jsx.
+  }
+  return null
+}
+
+const replaceCode = node => {
+  if (node.name === 'pre') {
+    return (
+      node.children.length > 0 && (
+        <PostCode language={getLanguage(node)}>
+          {domToReact(getCode(node))}
+        </PostCode>
+      )
+    )
+  }
+}
 
 export const BlogPostTemplate = ({
   content,
@@ -18,7 +48,8 @@ export const BlogPostTemplate = ({
         <div>
           <div>
             <h1>{title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+            <div>{parse(content, { replace: replaceCode })}</div>
             <div>
               <p>
                 {date} - posted by{' '}
