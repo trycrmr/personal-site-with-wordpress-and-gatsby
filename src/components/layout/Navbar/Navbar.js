@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import NavButton from '../NavButton/NavButton'
+import { StaticQuery, graphql } from 'gatsby'
 
 const Navbar = () => (
   <StaticQuery
@@ -17,18 +18,18 @@ const Navbar = () => (
     `}
     render={data => (
       <nav>
-        <div>
-          <div>
-            <Link to="/">Home</Link>
-          </div>
-          <div>
-            {data.allWordpressPage.edges.map(edge => (
-              <Link to={edge.node.slug} key={edge.node.slug}>
-                {edge.node.title}
-              </Link>
-            ))}
-          </div>
-        </div>
+        <>
+          <NavButton to="/" text="TERRY CREAMER" />
+        </>
+        <>
+          {data.allWordpressPage.edges.map(edge => (
+            <NavButton
+              to={edge.node.slug}
+              key={edge.node.slug}
+              text={edge.node.title}
+            />
+          ))}
+        </>
       </nav>
     )}
   />
