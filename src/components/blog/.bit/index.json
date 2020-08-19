@@ -1,0 +1,138 @@
+[
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "compilers/react"
+    },
+    "isSymlink": false,
+    "hash": "acfc8a808ec3ad8abacd313c9c8b456c1fd7b0b3"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/get-babel-options"
+    },
+    "isSymlink": false,
+    "hash": "d4771e232e52a7a9ef391bf363d523bc932b014d"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/babel-base-compiler"
+    },
+    "isSymlink": false,
+    "hash": "98f497a5e1cba818d2d5da02020ed566a572b936"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "common/compiler-types"
+    },
+    "isSymlink": false,
+    "hash": "9c86fadf101414c730daf20f3b3c0b3adcd84e79"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "common/create-workspace"
+    },
+    "isSymlink": false,
+    "hash": "6b4cdb50159308c72de7a4291fc551540ba4a390"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "common/get-capsule-name"
+    },
+    "isSymlink": false,
+    "hash": "26aefd5aeef44fe4baf09eb442719418744f2d7d"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "common/build-component"
+    },
+    "isSymlink": false,
+    "hash": "4046cf768d7527702d0d1393e876cf12efe18835"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/has-own-property"
+    },
+    "isSymlink": false,
+    "hash": "68b489f0ac79f13787c77dc1fd6a7beb18a7b6ba"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/group-by"
+    },
+    "isSymlink": false,
+    "hash": "9155f60c15a0d4c1c0301f15ef2a09a99687ca77"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "content"
+    },
+    "isSymlink": true,
+    "hash": "040f06fd774092478d450774f5ba30c5da78acc8"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "pagination"
+    },
+    "isSymlink": true,
+    "hash": "31fbb9d2e0d13b29c5296acd65d75c9fe1ceaee8"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "post-code"
+    },
+    "isSymlink": true,
+    "hash": "7850def7ad53b5ff69834859c5f6852aee2a2e61"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "post-list"
+    },
+    "isSymlink": true,
+    "hash": "9649ba1dbc32c4e041665a002c8e12aee99d5d3a"
+  },
+  {
+    "id": {
+      "scope": "trycrmr.blog",
+      "name": "content"
+    },
+    "isSymlink": false,
+    "hash": "1fea8a44dd31b8773f8476ef3f105a24223b8cb2"
+  },
+  {
+    "id": {
+      "scope": "trycrmr.blog",
+      "name": "pagination"
+    },
+    "isSymlink": false,
+    "hash": "a88afbb11befe0f315a11cd97b3714005b9d6814"
+  },
+  {
+    "id": {
+      "scope": "trycrmr.blog",
+      "name": "post-code"
+    },
+    "isSymlink": false,
+    "hash": "da620185a39fa8d01a637f551dcc2fbcf6494046"
+  },
+  {
+    "id": {
+      "scope": "trycrmr.blog",
+      "name": "post-list"
+    },
+    "isSymlink": false,
+    "hash": "cf2fa8c443121f23886e51a4b3a4c684d1896d48"
+  }
+]

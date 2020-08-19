@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import PostCode from '../components/PostCode'
+import Layout from '../components/layout/Layout/Layout'
+import PostCode from '../components/blog/PostCode/PostCode'
 import parse, { domToReact } from 'html-react-parser'
 
 const getCode = node => {

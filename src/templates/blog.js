@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import PostList from '../components/PostList'
-import Pagination from '../components/Pagination'
+import Layout from '../components/layout/Layout/Layout'
+import PostList from '../components/blog/PostList/PostList'
+import Pagination from '../components/blog/Pagination/Pagination'
 
 export default class IndexPage extends React.Component {
   render() {
