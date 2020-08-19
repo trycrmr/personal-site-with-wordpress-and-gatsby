@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar'
 
 const TemplateWrapper = ({ children }) => (
   <div className={styles.layout}>
-    <Helmet title="Home | Gatsby + WordPress" />
+    <Helmet title="TERRY CREAMER" />
     <Navbar />
     <div>{children}</div>
   </div>
