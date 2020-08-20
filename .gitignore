@@ -1,5 +1,6 @@
 # Terrys ignores
 public/
+.bit/
 
 # Logs
 logs

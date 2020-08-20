@@ -102,5 +102,21 @@
     },
     "isSymlink": false,
     "hash": "089875d08ced66c658cb87c54a2b1379921849a5"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "nav-button"
+    },
+    "isSymlink": true,
+    "hash": "579035c2f6849d4efed89e5086557490b37fb437"
+  },
+  {
+    "id": {
+      "scope": "trycrmr.layout",
+      "name": "nav-button"
+    },
+    "isSymlink": false,
+    "hash": "ca908510720ee1b47b3b4f9011d8b25020d4d8ac"
   }
 ]
