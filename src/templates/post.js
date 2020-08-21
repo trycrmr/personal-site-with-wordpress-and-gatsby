@@ -5,7 +5,7 @@ import { graphql, Link } from 'gatsby'
 import parse, { domToReact } from 'html-react-parser'
 import Layout from '../components/layout/Layout/Layout'
 import PostCode from '../components/blog/PostCode/PostCode'
-import PostTitleSection from '../components/blog/PostTitleSection/PostTitleSection'
+import PostTitleSection from '../components/blog/PostTitleSection'
 
 const getCode = node => {
   if (node.children.length > 0 && node.children[0].name === 'code') {
