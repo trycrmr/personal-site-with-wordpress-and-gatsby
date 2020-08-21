@@ -1,7 +1,7 @@
 {
     "env": {
-        "compiler": "bit.envs/compilers/react@1.0.20"
+        "compiler": "../blog/bit.envs/compilers/react@1.0.20"
     },
     "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "npm"
+    "packageManager": "yarn"
 }
