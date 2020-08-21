@@ -2,9 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
+import parse, { domToReact } from 'html-react-parser'
 import Layout from '../components/layout/Layout/Layout'
 import PostCode from '../components/blog/PostCode/PostCode'
-import parse, { domToReact } from 'html-react-parser'
+import PostTitleSection from '../components/blog/PostTitleSection/PostTitleSection'
 
 const getCode = node => {
   if (node.children.length > 0 && node.children[0].name === 'code') {
