@@ -1,7 +1,19 @@
 {
-    "env": {
-        "compiler": "../blog/bit.envs/compilers/react@1.0.20"
+  "env": {
+    "compiler": {
+      "bit.envs/compilers/react@1.0.20": {}
     },
-    "componentsDefaultDirectory": "components/{name}",
-    "packageManager": "yarn"
+    "tester": {
+      "bit.envs/testers/jest@22.4.3": {
+        "rawConfig": {
+          "jest-config": {}
+        }
+      }
+    }
+  },
+  "componentsDefaultDirectory": "components",
+  "packageManager": "yarn",
+  "dist": {
+    "target": "dist"
+  }
 }
