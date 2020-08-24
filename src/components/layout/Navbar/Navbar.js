@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { StaticQuery, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import './Navbar.module.scss';
 import Navbar from 'react-bulma-components/lib/components/navbar';
-import { useMediaQuery } from 'react-responsive';
 
 const BulmaNavbar = () => {
-  const [state, setState] = React.useState(false);
-  const isBigScreen = useMediaQuery({ query: '(min-device-width: 720px)' });
+  const [state, setState] = useState(false);
 
   const handleClick = () => {
     setState(!state);
