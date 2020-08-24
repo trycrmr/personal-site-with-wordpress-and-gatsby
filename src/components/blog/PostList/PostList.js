@@ -1,49 +1,49 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
 
-export default class IndexPage extends React.Component {
+export default class PostList extends React.Component {
   render() {
-    const { posts, title } = this.props
-
+    const { posts, title } = this.props;
     return (
       <section>
         <div>
-          <div>
-            <h1>{title}</h1>
-          </div>
-          {posts.map(({ node: post }) => (
+          {title ? (
+            <div>
+              <h1>{title}</h1>
+            </div>
+          ) : null}
+          {posts.map(post => (
             <div key={post.id}>
               <p>
-                <Link to={post.slug}>{post.title}</Link>
-                <span> &bull; </span>
-                <small>
-                  {post.date} - posted by{' '}
-                  <Link to={`/author/${post.author.slug}`}>
-                    {post.author.name}
-                  </Link>
-                </small>
+                <Link to={post.slug}>
+                  {post.title ? post.title : '[Untitled]'}
+                </Link>
               </p>
-              <div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: post.excerpt.replace(/<p class="link-more.*/, ''),
-                  }}
+              <p>
+                Last updated on {new Date(post.modified).toLocaleDateString()}
+              </p>
+              {post.featured_media ? (
+                <img alt="test alt text" src={post.featured_media.source_url} />
+              ) : (
+                <img
+                  alt="test alt text"
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg"
                 />
-                <Link to={post.slug}>Keep Reading →</Link>
-              </div>
+              )}
+              <hr />
             </div>
           ))}
         </div>
       </section>
-    )
+    );
   }
 }
 
-IndexPage.propTypes = {
+PostList.propTypes = {
   posts: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
-}
+};
 
 export const pageQuery = graphql`
   fragment PostListFields on wordpress__POST {
@@ -60,4 +60,4 @@ export const pageQuery = graphql`
     date(formatString: "MMMM DD, YYYY")
     slug
   }
-`
+`;
