@@ -19,30 +19,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "trycrmr.layout/nav-button@0.0.1": {
-        "files": [
-            {
-                "relativePath": "NavButton/NavButton.js",
-                "test": false,
-                "name": "NavButton.js"
-            },
-            {
-                "relativePath": "NavButton/NavButton.module.scss",
-                "test": false,
-                "name": "NavButton.module.scss"
-            }
-        ],
-        "mainFile": "NavButton/NavButton.js",
-        "trackDir": "NavButton",
-        "origin": "AUTHORED",
-        "exported": true
-    },
     "trycrmr.layout/navbar@0.0.1": {
         "files": [
             {
                 "relativePath": "Navbar/Navbar.js",
                 "test": false,
                 "name": "Navbar.js"
+            },
+            {
+                "relativePath": "Navbar/Navbar.module.scss",
+                "test": false,
+                "name": "Navbar.module.scss"
             }
         ],
         "mainFile": "Navbar/Navbar.js",
