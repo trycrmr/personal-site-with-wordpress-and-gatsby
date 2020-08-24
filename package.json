@@ -24,8 +24,10 @@
     "parcel-bundler": "^1.12.3",
     "prop-types": "^15.6.0",
     "react": "^16.9.0",
+    "react-bulma-components": "^3.4.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-responsive": "^8.1.0",
     "react-syntax-highlighter": "^13.4.0",
     "react-test-renderer": "^16.13.1",
     "uuid": "^3.3.3"

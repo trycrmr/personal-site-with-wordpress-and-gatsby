@@ -4,7 +4,10 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: { includePaths: ['./src/styles'] },
+    },
     {
       resolve: 'gatsby-source-wordpress',
       options: {
@@ -20,4 +23,4 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
-}
+};

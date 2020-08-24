@@ -1,7 +1,7 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import styles from './Layout.module.scss'
-import Navbar from '../Navbar/Navbar'
+import React from 'react';
+import Helmet from 'react-helmet';
+import styles from './Layout.module.scss';
+import Navbar from '../Navbar/Navbar';
 
 const TemplateWrapper = ({ children }) => (
   <div className={styles.layout}>
@@ -43,6 +43,6 @@ const TemplateWrapper = ({ children }) => (
     <Navbar />
     <div>{children}</div>
   </div>
-)
+);
 
-export default TemplateWrapper
+export default TemplateWrapper;
