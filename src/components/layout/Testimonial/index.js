@@ -8,7 +8,7 @@ const getRandomTestimonial = () => {
     '"Certified Fresh" by critics on Rotten Tomatoes (86% audience score).',
     'Fitbit "High Tops" badge recipient.',
     'Pickup soccer Sportsmanship award 3x nominee.',
-    '"Excellent roommate" - his smart speaker.',
+    '"Smarter than a cartoon owl professor." -Google Home',
     'Walks up DC escalators.',
     'Well traveled but who cares.',
   ];
