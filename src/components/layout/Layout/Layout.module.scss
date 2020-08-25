@@ -1,11 +1,11 @@
 @import '../../../styles/main.scss';
 
-$fc: black; // "font-color"
-$bc: whitesmoke; // "background-color"
+$fc: whitesmoke; // "font-color"
+$bc: black; // "background-color"
 
 .layout {
   background-color: $bc;
   color: $fc;
-  border: 0.2rem solid whitesmoke;
-  padding: 0.5rem 1rem;
+  // border: 0.2rem solid whitesmoke;
+  // padding: 0.5rem 1rem;
 }

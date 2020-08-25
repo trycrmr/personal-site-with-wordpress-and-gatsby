@@ -27,9 +27,7 @@ const Index = () => {
   `);
   return (
     <Layout>
-      <Section>
-        <Banner />
-      </Section>
+      <Banner />
       <Section>
         <Container>
           <hr />

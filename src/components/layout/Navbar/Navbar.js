@@ -24,7 +24,7 @@ const BulmaNavbar = () => {
   `);
 
   return (
-    <Navbar color={null} fixed="top" active={state} transparent={false}>
+    <Navbar color="dark" fixed="top" active={state} transparent={false}>
       <Navbar.Brand>
         <Navbar.Item href="/">TERRY CREAMER</Navbar.Item>
         <Navbar.Burger
