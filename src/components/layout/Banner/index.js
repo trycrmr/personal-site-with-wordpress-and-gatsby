@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import Section from 'react-bulma-components/lib/components/section';
-
+import Testimonial from '../Testimonial';
 const imgQuery = graphql`
   query {
     allWordpressWpMedia {
@@ -34,7 +34,7 @@ const Banner = () => {
       }
       style={{
         backgroundSize: 'contain',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'repeat',
       }}
     >
       <Section
@@ -50,11 +50,24 @@ const Banner = () => {
             size={1}
             weight="bold"
             style={{
+              color: 'black',
               textShadow:
-                '3px 3px 3px whitesmoke, -3px 3px 3px whitesmoke, 3px -3px 3px whitesmoke, -3px -3px 3px whitesmoke',
+                '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
             }}
           >
             TERRY CREAMER
+          </Heading>
+          <Heading
+            className={styles.alignCenter}
+            size={2}
+            weight="bold"
+            style={{
+              color: 'black',
+              textShadow:
+                '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+            }}
+          >
+            <Testimonial />
           </Heading>
         </Container>
       </Section>
