@@ -13,6 +13,7 @@ export default class PostList extends React.Component {
     const { posts, title } = this.props;
     return (
       <Section>
+        <Heading size={4}>{title}</Heading>
         <Box>
           <Tile
             kind="ancestor"
@@ -27,53 +28,61 @@ export default class PostList extends React.Component {
           >
             {posts.map(post => {
               return (
-                <Tile kind="parent">
-                  <BackgroundImage
-                    fixed={
-                      post.featured_media
-                        ? post.featured_media.localFile.childImageSharp.fixed
-                        : null
-                    }
+                <Tile
+                  kind="parent"
+                  style={{
+                    textAlign: 'center',
+                    margin: 'auto',
+                  }}
+                >
+                  <Link
+                    to={post.slug}
                     style={{
-                      margin: 'auto',
+                      color: 'black',
+                      // backgroundColor: 'grey',
+                      textShadow:
+                        '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+                      textDecoration: 'underline',
                     }}
                   >
-                    <Tile
-                      key={post.id}
-                      renderAs="article"
-                      kind="child"
-                      size={12}
+                    <BackgroundImage
+                      fixed={
+                        post.featured_media
+                          ? post.featured_media.localFile.childImageSharp.fixed
+                          : null
+                      }
+                      style={{
+                        margin: 'auto',
+                      }}
                     >
-                      <Section>
-                        <Container
-                          style={{
-                            textAlign: 'center',
-                          }}
-                        >
-                          {/* <code>{JSON.stringify(post)}</code> */}
-                          <Heading style={{ textAlign: 'center' }}>
-                            <Link
-                              to={post.slug}
+                      <Tile
+                        key={post.id}
+                        renderAs="article"
+                        kind="child"
+                        size={12}
+                        style={{
+                          textAlign: 'center',
+                          margin: 'auto',
+                        }}
+                      >
+                        <Section>
+                          <Container style={{ margin: 'auto' }}>
+                            {/* <code>{JSON.stringify(post)}</code> */}
+                            <Heading
+                              size="4"
                               style={{
-                                color: 'whitesmoke',
-                                backgroundColor: 'grey',
+                                textAlign: 'center',
+                                margin: 'auto',
+                                padding: 'auto',
                               }}
                             >
                               {post.title ? post.title : '[Untitled]'}
-                            </Link>
-                          </Heading>
-                          <span
-                            style={{
-                              backgroundColor: 'grey',
-                            }}
-                          >
-                            Last updated on{' '}
-                            {new Date(post.modified).toLocaleDateString()}
-                          </span>
-                        </Container>
-                      </Section>
-                    </Tile>
-                  </BackgroundImage>
+                            </Heading>
+                          </Container>
+                        </Section>
+                      </Tile>
+                    </BackgroundImage>
+                  </Link>
                 </Tile>
               );
             })}

@@ -39,7 +39,7 @@ const Index = () => {
         <Container>
           {/* <hr /> */}
           <PostList
-            title={null}
+            title="Latest Blog Posts"
             posts={data.allWordpressPost.edges
               .map(thisNode => thisNode.node)
               .reverse()}
