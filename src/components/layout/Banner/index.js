@@ -8,7 +8,13 @@ import Section from 'react-bulma-components/lib/components/section';
 import Testimonial from '../Testimonial'; // Not a React component at the moment. Returns a string testimonial. Leaving as it will probably become a component at some point.
 const imgQuery = graphql`
   query {
-    allWordpressWpMedia {
+    allWordpressWpMedia(
+      filter: {
+        source_url: {
+          eq: "https://cms.terrycreamer.codes/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
+        }
+      }
+    ) {
       edges {
         node {
           localFile {
