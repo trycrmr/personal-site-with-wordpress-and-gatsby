@@ -34,7 +34,7 @@ const Index = () => {
   `);
   return (
     <Layout>
-      <Banner />
+      {/* <Banner /> */}
       <Section>
         <Container>
           {/* <hr /> */}

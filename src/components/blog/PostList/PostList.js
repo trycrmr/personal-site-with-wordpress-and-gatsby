@@ -23,26 +23,24 @@ export default class PostList extends React.Component {
               width: 'min-content',
               justifyContent: 'center',
               alignItems: 'flex-start',
-              width: '100%',
+              width: 'inherit',
             }}
           >
             {posts.map(post => {
               return (
-                <Tile
-                  kind="parent"
-                  style={{
-                    textAlign: 'center',
-                    margin: 'auto',
-                  }}
-                >
+                <Tile kind="parent" key={post.id}>
                   <Link
                     to={post.slug}
                     style={{
                       color: 'black',
-                      // backgroundColor: 'grey',
                       textShadow:
                         '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
                       textDecoration: 'underline',
+                      flexFlow: 'row wrap',
+                      justifyContent: 'flex-start',
+                      alignItems: 'flex-start',
+                      width: '100%',
+                      display: 'flex',
                     }}
                   >
                     <BackgroundImage
@@ -60,25 +58,21 @@ export default class PostList extends React.Component {
                         renderAs="article"
                         kind="child"
                         size={12}
-                        style={{
-                          textAlign: 'center',
-                          margin: 'auto',
-                        }}
+                        style={{ height: 'inherit' }}
                       >
-                        <Section>
-                          <Container style={{ margin: 'auto' }}>
-                            {/* <code>{JSON.stringify(post)}</code> */}
-                            <Heading
-                              size="4"
-                              style={{
-                                textAlign: 'center',
-                                margin: 'auto',
-                                padding: 'auto',
-                              }}
-                            >
-                              {post.title ? post.title : '[Untitled]'}
-                            </Heading>
-                          </Container>
+                        <Section
+                          style={{
+                            height: 'inherit',
+                            width: 'inherit',
+                            display: 'flex',
+                            alignContent: 'center',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                          }}
+                        >
+                          <Heading size={4}>
+                            {post.title ? post.title : '[Untitled]'}
+                          </Heading>
                         </Section>
                       </Tile>
                     </BackgroundImage>
