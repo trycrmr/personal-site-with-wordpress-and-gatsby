@@ -36,7 +36,7 @@ const BulmaNavbar = () => {
       <Navbar.Menu>
         <Navbar.Container position="end">
           {data.allWordpressPage.edges.map(edge => (
-            <Navbar.Item href={edge.node.slug} key={edge.node.slug}>
+            <Navbar.Item href={`/${edge.node.slug}`} key={edge.node.slug}>
               {edge.node.title}
             </Navbar.Item>
           ))}
