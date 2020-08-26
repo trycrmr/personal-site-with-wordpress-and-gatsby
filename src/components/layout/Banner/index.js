@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
 import styles from './Banner.module.scss';
-import Img from 'gatsby-image';
 import BackgroundImage from 'gatsby-background-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import Section from 'react-bulma-components/lib/components/section';
-import Testimonial from '../Testimonial';
+import Testimonial from '../Testimonial'; // Not a React component at the moment. Returns a string testimonial. Leaving as it will probably become a component at some point.
 const imgQuery = graphql`
   query {
     allWordpressWpMedia {
@@ -26,6 +25,7 @@ const imgQuery = graphql`
 `;
 
 const Banner = () => {
+  const [state, setstate] = useState(Testimonial());
   const data = useStaticQuery(imgQuery);
   return (
     <BackgroundImage
@@ -67,7 +67,7 @@ const Banner = () => {
                 '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
             }}
           >
-            <Testimonial />
+            {state}
           </Heading>
         </Container>
       </Section>

@@ -10,11 +10,10 @@ const getRandomTestimonial = () => {
     'Pickup soccer Sportsmanship award 3x nominee.',
     '"Smarter than a cartoon owl professor." -Smart speakers everywhere',
     'When boarding the metro, moves to the center of the car.',
-    'The most modest-est person ever.',
+    'The most modest person ever.',
   ];
-  const thisTestimonial = Math.floor(Math.random() * testimonials.length);
-  console.info(thisTestimonial);
-  return testimonials[thisTestimonial];
+  const getRandomIndex = () => Math.floor(Math.random() * testimonials.length);
+  return testimonials[getRandomIndex()];
 };
 
 const Testimonial = () => {
