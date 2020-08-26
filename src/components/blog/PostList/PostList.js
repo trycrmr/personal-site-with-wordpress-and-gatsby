@@ -24,6 +24,7 @@ export default class PostList extends React.Component {
               justifyContent: 'center',
               alignItems: 'flex-start',
               width: 'inherit',
+              backgroundColor: 'lightgrey',
             }}
           >
             {posts.map(post => {
@@ -51,6 +52,7 @@ export default class PostList extends React.Component {
                       }
                       style={{
                         margin: 'auto',
+                        border: '5px solid black',
                       }}
                     >
                       <Tile
