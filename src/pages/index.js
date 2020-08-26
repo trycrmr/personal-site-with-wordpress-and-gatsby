@@ -19,6 +19,13 @@ const Index = () => {
             modified
             featured_media {
               source_url
+              localFile {
+                childImageSharp {
+                  fixed {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
             }
           }
         }
