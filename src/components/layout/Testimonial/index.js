@@ -8,9 +8,9 @@ const getRandomTestimonial = () => {
     '"Certified Fresh" by critics on Rotten Tomatoes (86% audience score).',
     'Fitbit "High Tops" badge recipient.',
     'Pickup soccer Sportsmanship award 3x nominee.',
-    '"Smarter than a cartoon owl professor." -Google Home',
-    'Walks up DC escalators.',
-    'Well traveled but who cares.',
+    '"Smarter than a cartoon owl professor." -Smart speakers everywhere',
+    'When boarding the metro, moves to the center of the car.',
+    'The most modest-est person ever.',
   ];
   const thisTestimonial = Math.floor(Math.random() * testimonials.length);
   console.info(thisTestimonial);
