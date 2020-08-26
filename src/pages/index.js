@@ -37,7 +37,7 @@ const Index = () => {
       <Banner />
       <Section>
         <Container>
-          <hr />
+          {/* <hr /> */}
           <PostList
             title={null}
             posts={data.allWordpressPost.edges

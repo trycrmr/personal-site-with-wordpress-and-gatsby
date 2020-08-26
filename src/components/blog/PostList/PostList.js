@@ -14,10 +14,20 @@ export default class PostList extends React.Component {
     return (
       <Section>
         <Box>
-          <Tile kind="ancestor" vertical>
+          <Tile
+            kind="ancestor"
+            vertical
+            style={{
+              flexFlow: 'row wrap',
+              width: 'min-content',
+              justifyContent: 'center',
+              alignItems: 'flex-start',
+              width: '100%',
+            }}
+          >
             {posts.map(post => {
               return (
-                <Tile kind="parent" size={12}>
+                <Tile kind="parent">
                   <BackgroundImage
                     fixed={
                       post.featured_media
