@@ -84,13 +84,10 @@ const Index = () => {
       </Section>
       <Section
         style={{
-          // fontFamily: 'caption',
-          // lineHeight: '1.8',
           paddingTop: '0px',
         }}
       >
         <Container>
-          {/* <hr /> */}
           <PostList
             title="Latest Blog Posts"
             posts={data.allWordpressPost.edges
