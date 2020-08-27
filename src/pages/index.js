@@ -63,20 +63,20 @@ const Index = () => {
                 LLC (“Grounded IT”), an IT training and services company. Proven
                 experience delivering customer needs in Full-Stack, DevOps,
                 Cloud, and network-isolated applications. Primarily works on
-                Node.js w/ React applications hosted on AWS. Has managed
-                deployments of open source software written in PHP, specifically
-                Matomo (fomerly Piwik), and WordPress. Algorithm experience
-                consists of converting time series datasets into hierarchical,
-                hashmap referenceable tree structures, resulting in a
-                population-adjusted, global, over-time, low-bandwidth COVID-19
-                aggregates analysis dashboard with planetary to U.S. County
-                granularity served as a serverless, single page application.
-                Managerial experience includes overseeing several practitioners
-                and a portfolio of web applications for the State Department's
-                Office of eDiplomacy. This website was built with GatsbyJS and
-                uses a "Headless" WordPress site for content management.
-                Generally considered to be a decent human being. Based in
-                Washington, DC.
+                Node.js w/ React applications hosted on AWS. Has worked as a
+                developer or managed applications written in PHP, Python, and
+                Ruby, and has similar experience with SQL and NoSQL databases.
+                Algorithm experience includes converting time series datasets
+                into hierarchical, hashmap referenceable tree structures,
+                resulting in a population-adjusted, global, over-time,
+                low-bandwidth COVID-19 aggregates analysis dashboard with
+                planetary to U.S. County granularity served as a serverless,
+                single page application. Managerial experience includes
+                overseeing several practitioners and a portfolio of web
+                applications for the State Department's Office of eDiplomacy.
+                This website was built with GatsbyJS and uses a "Headless"
+                WordPress site for content management. Generally considered to
+                be a decent human being. Based in Washington, DC.
               </p>
             </Content>
           </main>
