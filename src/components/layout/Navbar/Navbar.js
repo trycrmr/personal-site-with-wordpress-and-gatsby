@@ -32,7 +32,7 @@ const BulmaNavbar = () => {
       style={{ fontWeight: 1000 }}
     >
       <Navbar.Brand>
-        <Navbar.Item href="/">TERRY CREAMER</Navbar.Item>
+        <Navbar.Item href="/">TERRY</Navbar.Item>
         <Navbar.Burger
           onClick={() => {
             handleClick();
