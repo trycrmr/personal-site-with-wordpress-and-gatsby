@@ -92,14 +92,15 @@ const Index = () => {
           paddingTop: '0px',
         }}
       >
-        <Container>
-          <PostList
-            title="Latest Blog Posts"
-            posts={data.allWordpressPost.edges
-              .map(thisNode => thisNode.node)
-              .reverse()}
-          />
-        </Container>
+        <PostList
+          title="Latest Blog Posts"
+          size={
+            'medium' /* Same as Section Bulma React Component setting, medium, large*/
+          }
+          posts={data.allWordpressPost.edges
+            .map(thisNode => thisNode.node)
+            .reverse()}
+        />
       </Section>
     </Layout>
   );

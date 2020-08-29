@@ -10,11 +10,20 @@ import BackgroundImage from 'gatsby-background-image';
 
 export default class PostList extends React.Component {
   render() {
-    const { posts, title } = this.props;
+    const { posts, title, size } = this.props;
     return (
-      <Section>
-        <Heading size={4}>{title}</Heading>
-        <Box>
+      <>
+        <Heading
+          size={4}
+          style={{
+            alignContent: 'center',
+            textAlign: 'center',
+            paddingTop: '2rem',
+          }}
+        >
+          {title}
+        </Heading>
+        <Box style={{ backgroundColor: 'black' }}>
           <Tile
             kind="ancestor"
             vertical
@@ -24,12 +33,19 @@ export default class PostList extends React.Component {
               justifyContent: 'center',
               alignItems: 'flex-start',
               width: 'inherit',
-              backgroundColor: 'lightgrey',
+              backgroundColor: 'black',
             }}
           >
             {posts.map(post => {
               return (
-                <Tile kind="parent" key={post.id}>
+                <Tile
+                  kind="parent"
+                  key={post.id}
+                  style={{
+                    WebkitBorderImage:
+                      '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch',
+                  }}
+                >
                   <Link
                     to={post.slug}
                     style={{
@@ -84,7 +100,7 @@ export default class PostList extends React.Component {
             })}
           </Tile>
         </Box>
-      </Section>
+      </>
     );
   }
 }
