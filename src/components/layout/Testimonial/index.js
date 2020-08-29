@@ -13,6 +13,7 @@ const getRandomTestimonial = () => {
     '"Smarter than a cartoon owl professor." -Smart speakers everywhere',
     'When boarding the metro, moves to the center of the car.',
     'The most modest person ever.',
+    'Consecutive annual attendance awardee (2nd and 3rd grade).',
   ];
   const getRandomIndex = () => Math.floor(Math.random() * testimonials.length);
   return testimonials[getRandomIndex()];
