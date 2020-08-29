@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout/Layout';
 import PostList from '../components/blog/PostList/PostList';
 import { useStaticQuery } from 'gatsby';
@@ -6,6 +6,7 @@ import Banner from '../components/layout/Banner';
 import Section from 'react-bulma-components/lib/components/section';
 import Container from 'react-bulma-components/lib/components/container';
 import Content from 'react-bulma-components/lib/components/content';
+import { getTestimonial } from '../components/layout/Testimonial';
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -33,9 +34,15 @@ const Index = () => {
       }
     }
   `);
+  const [test, setTest] = useState('');
+  const handleTestUpdate = () => {
+    console.info(`blah ${test}`);
+    if (test) return test;
+    return setTest(getTestimonial());
+  };
   return (
     <Layout>
-      <Banner />
+      <Banner testimonial={handleTestUpdate()} />
       <Section
         style={{
           fontFamily: 'caption',

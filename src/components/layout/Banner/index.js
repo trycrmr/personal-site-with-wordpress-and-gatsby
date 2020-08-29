@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
 import styles from './Banner.module.scss';
@@ -30,9 +30,12 @@ const imgQuery = graphql`
   }
 `;
 
-const Banner = () => {
-  const [state, setstate] = useState(Testimonial());
+const Banner = props => {
   const data = useStaticQuery(imgQuery);
+  // const [testimonial, setTestimonial] = useState(getRandomTestimonial());
+  // const testimonialCb = useCallback(() => getRandomTestimonial(), [
+  //   testimonial,
+  // ]);
   return (
     <BackgroundImage
       fluid={
@@ -73,7 +76,7 @@ const Banner = () => {
                 '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
             }}
           >
-            {state}
+            <Testimonial text={props.testimonial} />
           </Heading>
         </Container>
       </Section>

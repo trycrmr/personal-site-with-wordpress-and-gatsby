@@ -1,3 +1,5 @@
+import React from 'react';
+
 const getRandomTestimonial = () => {
   const testimonials = [
     '100% library book return rate.',
@@ -16,8 +18,12 @@ const getRandomTestimonial = () => {
   return testimonials[getRandomIndex()];
 };
 
-const Testimonial = () => {
+export const getTestimonial = () => {
   return getRandomTestimonial();
+};
+
+const Testimonial = props => {
+  return <span>{props.text}</span>;
 };
 
 export default Testimonial;
