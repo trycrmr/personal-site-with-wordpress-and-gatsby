@@ -1,11 +1,12 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
 import styles from './Banner.module.scss';
 import BackgroundImage from 'gatsby-background-image';
 import { useStaticQuery, graphql } from 'gatsby';
 import Section from 'react-bulma-components/lib/components/section';
-import Testimonial from '../Testimonial'; // Not a React component at the moment. Returns a string testimonial. Leaving as it will probably become a component at some point.
+import Testimonial from '../Testimonial';
+import Refresh from '../Refresh';
 const imgQuery = graphql`
   query {
     allWordpressWpMedia(
@@ -32,10 +33,11 @@ const imgQuery = graphql`
 
 const Banner = props => {
   const data = useStaticQuery(imgQuery);
-  // const [testimonial, setTestimonial] = useState(getRandomTestimonial());
-  // const testimonialCb = useCallback(() => getRandomTestimonial(), [
-  //   testimonial,
-  // ]);
+  const iconStyles = {
+    textShadow:
+      '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+    fontSize: '0.8rem',
+  };
   return (
     <BackgroundImage
       fluid={
@@ -77,6 +79,24 @@ const Banner = props => {
             }}
           >
             <Testimonial text={props.testimonial} />
+          </Heading>
+          <Heading className={styles.alignCenter} size={2} weight="bold">
+            <button
+              style={{
+                fontSize: 'inherit',
+                borderRadius: '0.5rem',
+                background: 'none',
+                cursor: 'pointer',
+                boxShadow:
+                  '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+                background: 'none',
+              }}
+            >
+              <Refresh
+                style={iconStyles}
+                refreshFunction={props.refreshTestimonial}
+              />
+            </button>
           </Heading>
         </Container>
       </Section>

@@ -34,15 +34,13 @@ const Index = () => {
       }
     }
   `);
-  const [test, setTest] = useState('');
+  const [test, setTest] = useState(getTestimonial());
   const handleTestUpdate = () => {
-    console.info(`blah ${test}`);
-    if (test) return test;
-    return setTest(getTestimonial());
+    setTest(getTestimonial());
   };
   return (
     <Layout>
-      <Banner testimonial={handleTestUpdate()} />
+      <Banner testimonial={test} refreshTestimonial={handleTestUpdate} />
       <Section
         style={{
           fontFamily: 'caption',
