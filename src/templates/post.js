@@ -1,27 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
-import parse, { domToReact } from 'html-react-parser'
-import Layout from '../components/layout/Layout/Layout'
-import PostCode from '../components/blog/PostCode/PostCode'
-import PostTitleSection from '../components/blog/PostTitleSection'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import parse, { domToReact } from 'html-react-parser';
+import Layout from '../components/layout/Layout/Layout';
+import PostCode from '../components/blog/PostCode/PostCode';
+import PostTitleSection from '../components/blog/PostTitleSection';
 
 const getCode = node => {
   if (node.children.length > 0 && node.children[0].name === 'code') {
-    return node.children[0].children
+    return node.children[0].children;
   } else {
-    return node.children
+    return node.children;
   }
-}
+};
 
 const getLanguage = node => {
   if (node.attribs.class != null) {
     // return node.attribs.class <== Doesn't work because wordpress adds a class to the "code" block
-    return 'jsx' // This is adequate because right now because I'd mostly post javascript and jsx.
+    return 'jsx'; // This is adequate because right now because I'd mostly post javascript and jsx.
   }
-  return null
-}
+  return null;
+};
 
 const replaceCode = node => {
   if (node.name === 'pre') {
@@ -31,9 +31,9 @@ const replaceCode = node => {
           {domToReact(getCode(node))}
         </PostCode>
       )
-    )
+    );
   }
-}
+};
 
 export const BlogPostTemplate = ({
   content,
@@ -56,20 +56,6 @@ export const BlogPostTemplate = ({
                 {date} - posted by{' '}
                 <Link to={`/author/${author.slug}`}>{author.name}</Link>
               </p>
-              {categories && categories.length ? (
-                <div>
-                  <h4>Categories</h4>
-                  <ul>
-                    {categories.map(category => (
-                      <li key={`${category.slug}cat`}>
-                        <Link to={`/categories/${category.slug}/`}>
-                          {category.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
               {tags && tags.length ? (
                 <div>
                   <h4>Tags</h4>
@@ -87,16 +73,16 @@ export const BlogPostTemplate = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   title: PropTypes.string,
-}
+};
 
 const BlogPost = ({ data }) => {
-  const { wordpressPost: post } = data
+  const { wordpressPost: post } = data;
 
   return (
     <Layout>
@@ -110,16 +96,16 @@ const BlogPost = ({ data }) => {
         author={post.author}
       />
     </Layout>
-  )
-}
+  );
+};
 
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
-}
+};
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   fragment PostFields on wordpress__POST {
@@ -150,4 +136,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
