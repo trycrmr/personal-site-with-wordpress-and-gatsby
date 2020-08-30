@@ -49,7 +49,7 @@ const Banner = props => {
       }}
     >
       <Section
-        size="large"
+        size="medium"
         style={{
           maxHeight: '70vh',
           minHeight: '400px',
@@ -68,19 +68,7 @@ const Banner = props => {
           >
             TERRY CREAMER
           </Heading>
-          <Heading
-            className={styles.alignCenter}
-            size={2}
-            weight="bold"
-            style={{
-              color: 'black',
-              textShadow:
-                '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
-            }}
-          >
-            <Testimonial text={props.testimonial} />
-          </Heading>
-          <Heading className={styles.alignCenter} size={2} weight="bold">
+          <Heading className={styles.alignCenter} weight="bold" size={4}>
             <button
               style={{
                 fontSize: 'inherit',
@@ -97,6 +85,18 @@ const Banner = props => {
                 refreshFunction={props.refreshTestimonial}
               />
             </button>
+          </Heading>
+          <Heading
+            className={styles.alignCenter}
+            size={4}
+            weight="bold"
+            style={{
+              color: 'black',
+              textShadow:
+                '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+            }}
+          >
+            <Testimonial text={props.testimonial} />
           </Heading>
         </Container>
       </Section>
