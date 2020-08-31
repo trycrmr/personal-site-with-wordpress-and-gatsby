@@ -37,7 +37,8 @@ export default class PostList extends React.Component {
             }}
           >
             {posts.map(post => {
-              console.info(post);
+              if (post.id === 'f2dbe1f1-c7ba-57e9-b536-845c18263841')
+                return null; // filters out hello world post. My understanding is media cannot be queried on unpublished posts. The banner needs the image associated with this post, but this post is throwaway content. With that said, don't love this. Hopefully I'm mistaken about the constraints on querying images.
               return (
                 <Tile kind="parent" key={post.id} style={{ padding: '0px' }}>
                   <div
