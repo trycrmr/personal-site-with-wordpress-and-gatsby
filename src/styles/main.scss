@@ -1,3 +1,33 @@
-@import '../../node_modules/react-bulma-components/src/index.sass';
-@import '../../node_modules/bulma/bulma.sass';
-@import '../../node_modules/bulma-helpers/bulma-helpers.sass';
+// @import '../../node_modules/react-bulma-components/src/index.sass';
+// @import '../../node_modules/bulma/bulma.sass';
+// @import '../../node_modules/bulma-helpers/bulma-helpers.sass';
+
+$bgGradient: '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch' !default;
+
+article,
+.content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+    color: whitesmoke;
+  }
+  blockquote {
+    color: lightgrey;
+    background-color: black;
+    -webkit-border-image: '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch';
+  }
+  strong {
+    color: whitesmoke;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  figure {
+    figcaption {
+      font-style: unset;
+    }
+  }
+}

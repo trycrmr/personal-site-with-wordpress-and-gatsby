@@ -9,7 +9,8 @@ import Section from 'react-bulma-components/lib/components/section';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Container from 'react-bulma-components/lib/components/container';
 import Content from 'react-bulma-components/lib/components/content';
-import BackgroundImage from 'gatsby-background-image';
+// import BackgroundImage from 'gatsby-background-image';
+import '../styles/main.scss';
 
 const getCode = node => {
   if (node.children.length > 0 && node.children[0].name === 'code') {
@@ -50,7 +51,7 @@ export const BlogPostTemplate = ({
 }) => {
   return (
     <div>
-      <BackgroundImage
+      {/* <BackgroundImage
         fixed={featuredMedia.localFile.childImageSharp.fixed}
         style={{
           textAlign: 'center',
@@ -58,49 +59,73 @@ export const BlogPostTemplate = ({
           width: '100vw',
           height: 'unset',
         }}
+      > */}
+      <Section
+        style={{
+          maxHeight: '70vh',
+          // minHeight: '400px',
+          textAlign: 'center',
+        }}
       >
-        <Section
-          size="medium"
-          style={{
-            maxHeight: '70vh',
-            minHeight: '400px',
-          }}
-        >
-          <Container>
-            <Heading
-              size={1}
-              weight="bold"
-              style={{
-                color: 'black',
-                textShadow:
-                  '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
-              }}
-            >
-              {title}
-            </Heading>
-          </Container>
-        </Section>
-      </BackgroundImage>
-      <Section size="medium">
+        <Container>
+          <Heading
+            size={1}
+            weight="bold"
+            style={{
+              color: 'black',
+              textShadow:
+                '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+            }}
+          >
+            {title}
+          </Heading>
+        </Container>
+      </Section>
+      {/* </BackgroundImage> */}
+      <Section style={{ paddingTop: '0px' }}>
         <Container>
           <Content size="medium">
             <main>
-              {parse(content, { replace: replaceCode })}
+              <figure>
+                <div
+                  style={{
+                    width: 'fit-content',
+                    margin: 'auto',
+                    padding: '1rem',
+                    WebkitBorderImage:
+                      '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch',
+                  }}
+                >
+                  <img
+                    src={featuredMedia.source_url}
+                    style={{ maxWidth: '400px' }}
+                  ></img>
+                  <figcaption>
+                    {featuredMedia.caption.substring(
+                      3,
+                      featuredMedia.caption.length - 5
+                    ) /* Not sure if this happens with every caption, but it appears paragraph tags are placed before and after the caption string when captured by WordPress. This results in malformed output without trimming them off. TBD if a more thoughtful fix is needed to make sure the caption is properly displayed on all posts.*/}
+                  </figcaption>
+                </div>
+              </figure>
+              <article>{parse(content, { replace: replaceCode })}</article>
+            </main>
+            <Section>
               {date} - posted by{' '}
               <Link to={`/author/${author.slug}`}>{author.name}</Link>
-              {tags && tags.length ? (
-                <div>
-                  <h4>Tags</h4>
-                  <ul>
-                    {tags.map(tag => (
-                      <li key={`${tag.slug}tag`}>
-                        <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-            </main>
+            </Section>
+            {tags && tags.length ? (
+              <div>
+                <h4>Tags</h4>
+                <ul>
+                  {tags.map(tag => (
+                    <li key={`${tag.slug}tag`}>
+                      <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
           </Content>
         </Container>
       </Section>
@@ -168,9 +193,13 @@ export const pageQuery = graphql`
         slug
       }
       featured_media {
+        caption
         source_url
         localFile {
           childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
             fixed {
               ...GatsbyImageSharpFixed
             }
