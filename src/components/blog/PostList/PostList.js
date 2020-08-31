@@ -37,64 +37,67 @@ export default class PostList extends React.Component {
             }}
           >
             {posts.map(post => {
+              console.info(post);
               return (
-                <Tile
-                  kind="parent"
-                  key={post.id}
-                  style={{
-                    WebkitBorderImage:
-                      '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch',
-                  }}
-                >
-                  <Link
-                    to={post.slug}
+                <Tile kind="parent" key={post.id} style={{ padding: '0px' }}>
+                  <div
                     style={{
-                      color: 'black',
-                      textShadow:
-                        '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
-                      textDecoration: 'underline',
-                      flexFlow: 'row wrap',
-                      justifyContent: 'flex-start',
-                      alignItems: 'flex-start',
-                      width: '100%',
-                      display: 'flex',
+                      padding: '1rem',
+                      WebkitBorderImage:
+                        '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch',
                     }}
                   >
-                    <BackgroundImage
-                      fixed={
-                        post.featured_media
-                          ? post.featured_media.localFile.childImageSharp.fixed
-                          : null
-                      }
+                    <Link
+                      to={post.slug}
                       style={{
-                        margin: 'auto',
-                        border: '5px solid black',
+                        color: 'black',
+                        textShadow:
+                          '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+                        textDecoration: 'underline',
+                        flexFlow: 'row wrap',
+                        justifyContent: 'flex-start',
+                        alignItems: 'flex-start',
+                        width: '100%',
+                        display: 'flex',
                       }}
                     >
-                      <Tile
-                        key={post.id}
-                        renderAs="article"
-                        kind="child"
-                        size={12}
-                        style={{ height: 'inherit' }}
+                      <BackgroundImage
+                        fixed={
+                          post.featured_media
+                            ? post.featured_media.localFile.childImageSharp
+                                .fixed
+                            : null
+                        }
+                        style={{
+                          margin: 'auto',
+                          border: '5px solid black',
+                        }}
                       >
-                        <Section
-                          style={{
-                            height: 'inherit',
-                            width: 'inherit',
-                            display: 'flex',
-                            alignContent: 'center',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                          }}
+                        <Tile
+                          key={post.id}
+                          renderAs="article"
+                          kind="child"
+                          size={12}
+                          style={{ height: 'inherit' }}
                         >
-                          <Heading size={4}>
-                            {post.title ? post.title : '[Untitled]'}
-                          </Heading>
-                        </Section>
-                      </Tile>
-                    </BackgroundImage>
-                  </Link>
+                          <Section
+                            style={{
+                              height: 'inherit',
+                              width: 'inherit',
+                              display: 'flex',
+                              alignContent: 'center',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                            }}
+                          >
+                            <Heading size={4} style={{ textAlign: 'center' }}>
+                              {post.title ? post.title : '[Untitled]'}
+                            </Heading>
+                          </Section>
+                        </Tile>
+                      </BackgroundImage>
+                    </Link>
+                  </div>
                 </Tile>
               );
             })}
