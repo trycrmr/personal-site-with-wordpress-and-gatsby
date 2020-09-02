@@ -7,6 +7,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Section from 'react-bulma-components/lib/components/section';
 import Testimonial from '../Testimonial';
 import Refresh from '../Refresh';
+
+// TODO Haven't figured out a good way to swap these out when developing versus when deploying eq: "http://localhost:8080/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
 const imgQuery = graphql`
   query {
     allWordpressWpMedia(
