@@ -96,10 +96,7 @@ export const BlogPostTemplate = ({
                       '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch',
                   }}
                 >
-                  <img
-                    src={featuredMedia.source_url}
-                    style={{ maxWidth: '400px' }}
-                  ></img>
+                  <img src={featuredMedia.source_url}></img>
                   <figcaption>
                     {featuredMedia.caption.substring(
                       3,

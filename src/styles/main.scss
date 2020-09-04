@@ -17,6 +17,7 @@ article,
   }
   blockquote {
     color: lightgrey;
+    overflow-x: scroll;
     background-color: black;
     -webkit-border-image: '-webkit-gradient(linear, left top, right bottom, from(#191919), to(#090909), color-stop(1, #090909), color-stop(1, #191919)) 30 30 30 30 stretch stretch';
   }
@@ -26,8 +27,10 @@ article,
     text-decoration: underline;
   }
   figure {
+    margin: auto;
     figcaption {
       font-style: unset;
     }
   }
+  word-break: break-word;
 }
