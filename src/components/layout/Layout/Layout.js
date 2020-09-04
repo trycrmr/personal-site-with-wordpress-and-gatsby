@@ -7,10 +7,10 @@ const TemplateWrapper = ({ children }) => (
   <div className={styles.layout}>
     {/* <Helmet title="TERRY CREAMER" /> */}
     <Helmet
-      // {/* (optional) callback that tracks DOM changes */}
-      // onChangeClientState={(newState, addedTags, removedTags) =>
-      //   console.log(newState, addedTags, removedTags)
-      // }
+    // {/* (optional) callback that tracks DOM changes */}
+    // onChangeClientState={(newState, addedTags, removedTags) =>
+    //   console.log(newState, addedTags, removedTags)
+    // }
     >
       {/* html attributes */}
       <html lang="en" />

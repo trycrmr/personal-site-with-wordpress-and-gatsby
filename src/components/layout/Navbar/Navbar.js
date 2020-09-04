@@ -29,7 +29,12 @@ const BulmaNavbar = () => {
       fixed="top"
       active={state}
       transparent={false}
-      style={{ fontWeight: 1000 }}
+      style={{
+        fontWeight: '1000',
+        padding: '0px',
+        margin: '0px',
+        maxWidth: '100vw',
+      }}
     >
       <Navbar.Brand>
         <Navbar.Item href="/">TERRY</Navbar.Item>
@@ -40,9 +45,13 @@ const BulmaNavbar = () => {
         />
       </Navbar.Brand>
       <Navbar.Menu>
-        <Navbar.Container position="end">
+        <Navbar.Container style={{ maxWidth: '200px' }} position="end">
           {data.allWordpressPage.edges.map(edge => (
-            <Navbar.Item href={`/${edge.node.slug}`} key={edge.node.slug}>
+            <Navbar.Item
+              style={{ maxWidth: '200px' }}
+              href={`/${edge.node.slug}`}
+              key={edge.node.slug}
+            >
               {edge.node.title}
             </Navbar.Item>
           ))}
