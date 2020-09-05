@@ -124,15 +124,25 @@ export const pageQuery = graphql`
   fragment PostListFields on wordpress__POST {
     id
     title
+    slug
+    date
+    modified
     excerpt
     author {
       name
-      slug
       avatar_urls {
         wordpress_48
       }
     }
-    date(formatString: "MMMM DD, YYYY")
-    slug
+    featured_media {
+      source_url
+      localFile {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
   }
 `;

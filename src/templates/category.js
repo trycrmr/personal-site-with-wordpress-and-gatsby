@@ -1,27 +1,30 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../components/layout/Layout/Layout'
-import PostList from '../components/blog/PostList/PostList'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout/Layout/Layout';
+import PostList from '../components/blog/PostList/PostList';
 
 const Category = props => {
-  const { data, pageContext } = props
-  const { edges: posts, totalCount } = data.allWordpressPost
-  const { title: siteTitle } = data.site.siteMetadata
-  const { name: category } = pageContext
+  const { data, pageContext } = props;
+  const { edges: posts, totalCount } = data.allWordpressPost;
+  const { title: siteTitle } = data.site.siteMetadata;
+  const { name: category } = pageContext;
   const title = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } in the “${category}” category`
+  } in the “${category}” category`;
 
   return (
     <Layout>
       <Helmet title={`${category} | ${siteTitle}`} />
-      <PostList posts={posts} title={title} />
+      <PostList
+        posts={posts.map(thisNode => thisNode.node).reverse()}
+        title={title}
+      />
     </Layout>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;
 
 export const pageQuery = graphql`
   query CategoryPage($slug: String!) {
@@ -41,4 +44,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
