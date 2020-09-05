@@ -140,7 +140,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet title={`"${post.title}" -TERRY`} />
+      <Helmet title={`"${post.title}" by ${post.author.name}.`} />
       <BlogPostTemplate
         content={post.content}
         categories={post.categories}
