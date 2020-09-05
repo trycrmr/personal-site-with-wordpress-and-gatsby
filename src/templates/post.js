@@ -107,10 +107,20 @@ export const BlogPostTemplate = ({
               </figure>
               <article>{parse(content, { replace: replaceCode })}</article>
             </main>
-            <Section>
+            <hr />
+            <Content>
               {date} - posted by{' '}
               <Link to={`/author/${author.slug}`}>{author.name}</Link>
-            </Section>
+            </Content>
+            <Content>
+              <div>
+                {' '}
+                In lieu of hosting a comment section here, tag or message me via
+                one of the platforms on{' '}
+                <Link to={`/contact`}>the contact page</Link> to discuss this
+                post.
+              </div>
+            </Content>
             {tags && tags.length ? (
               <div>
                 <h4>Tags</h4>
