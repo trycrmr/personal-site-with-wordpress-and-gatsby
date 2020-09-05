@@ -8,7 +8,7 @@ import Section from 'react-bulma-components/lib/components/section';
 import Testimonial from '../Testimonial';
 import Refresh from '../Refresh';
 
-// TODO Haven't figured out a good way to swap these out when developing versus when deploying eq: "http://localhost:8080/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
+// TODO Haven't figured out a good way to swap these out when developing versus when deploying eq: "https://cms.terrycreamer.codes/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg" eq: "http://localhost:8080/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
 const imgQuery = graphql`
   query {
     allWordpressWpMedia(
@@ -75,11 +75,11 @@ const Banner = props => {
               style={{
                 fontSize: 'inherit',
                 borderRadius: '0.5rem',
-                background: 'none',
+                // background: 'none',
+                opacity: '0.5',
                 cursor: 'pointer',
                 boxShadow:
                   '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
-                background: 'none',
               }}
             >
               <Refresh
