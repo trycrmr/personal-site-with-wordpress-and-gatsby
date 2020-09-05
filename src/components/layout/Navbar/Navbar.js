@@ -44,11 +44,15 @@ const BulmaNavbar = () => {
           }}
         />
       </Navbar.Brand>
-      <Navbar.Menu>
+      <Navbar.Menu style={{ backgroundColor: 'inherit' }}>
         <Navbar.Container style={{ maxWidth: '200px' }} position="end">
           {data.allWordpressPage.edges.map(edge => (
             <Navbar.Item
-              style={{ maxWidth: '200px' }}
+              style={{
+                maxWidth: '200px',
+                color: 'inherit',
+                backgroundColor: 'inherit',
+              }}
               href={`/${edge.node.slug}`}
               key={edge.node.slug}
             >
