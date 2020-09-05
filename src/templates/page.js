@@ -6,12 +6,13 @@ import Heading from 'react-bulma-components/lib/components/heading';
 import Section from 'react-bulma-components/lib/components/section';
 import Container from 'react-bulma-components/lib/components/container';
 import Content from 'react-bulma-components/lib/components/content';
+import '../styles/page.scss';
 
 export const PageTemplate = ({ title, content }) => {
   return (
     <section>
       <div>
-        <Section
+        {/* <Section
           size="medium"
           style={{
             maxHeight: '70vh',
@@ -30,10 +31,10 @@ export const PageTemplate = ({ title, content }) => {
               }}
             >
               {title}
-            </Heading>
+            </Heading>  
           </Container>
-        </Section>
-        <Section>
+        </Section> */}
+        <Section className="only-text-page">
           <Content>
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </Content>
