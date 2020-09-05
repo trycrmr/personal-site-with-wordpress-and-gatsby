@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import styles from './Layout.module.scss';
 import Navbar from '../Navbar/Navbar';
+import favicon from '../../../images/favicon.ico';
 
 const TemplateWrapper = ({ children }) => (
   <div className={styles.layout}>
@@ -23,15 +24,16 @@ const TemplateWrapper = ({ children }) => (
       <meta property="og:type" content="article" />
       {/* multiple link elements */}
       <link rel="canonical" href="https://terrycreamer.codes" />
-      <link
+      <link rel="icon" href={favicon} />
+      {/* <link
         rel="apple-touch-icon"
         href="https://terrycreamer.codes/img/apple-touch-icon-57x57.png"
-      />
-      <link
+      /> */}
+      {/* <link
         rel="apple-touch-icon"
         sizes="72x72"
         href="https://terrycreamer.codes/img/apple-touch-icon-72x72.png"
-      />
+      /> */}
       {/* inline script elements */}
       <script type="application/ld+json">
         {`
