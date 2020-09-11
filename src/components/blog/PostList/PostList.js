@@ -55,7 +55,7 @@ export default class PostList extends React.Component {
                     }}
                   >
                     <Link
-                      to={post.slug}
+                      to={`/${post.slug}`}
                       style={{
                         color: 'black',
                         textShadow:
