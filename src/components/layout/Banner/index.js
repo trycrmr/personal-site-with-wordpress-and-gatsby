@@ -14,7 +14,7 @@ const imgQuery = graphql`
     allWordpressWpMedia(
       filter: {
         source_url: {
-          eq: "http://localhost:8080/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
+          eq: "https://cms.terrycreamer.codes/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
         }
       }
     ) {
