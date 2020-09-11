@@ -14,7 +14,7 @@ const imgQuery = graphql`
     allWordpressWpMedia(
       filter: {
         source_url: {
-          eq: "https://cms.terrycreamer.codes/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
+          eq: "http://localhost:8080/wp-content/uploads/2020/06/profile-pic-june-2020-scaled.jpg"
         }
       }
     ) {
@@ -35,6 +35,27 @@ const imgQuery = graphql`
 
 const Banner = props => {
   const data = useStaticQuery(imgQuery);
+  const getTextShadow = mouse => {
+    if (!mouse)
+      return '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke';
+    const calculateTextShadow = position => {
+      return Math.ceil(position / 200);
+    };
+
+    return `${calculateTextShadow(mouse.x)}px ${calculateTextShadow(
+      mouse.y
+    )}px 6px whitesmoke, -${calculateTextShadow(
+      mouse.x
+    )}px ${calculateTextShadow(
+      mouse.y
+    )}px 6px whitesmoke, ${calculateTextShadow(
+      mouse.x
+    )}px -${calculateTextShadow(
+      mouse.y
+    )}px 6px whitesmoke, -${calculateTextShadow(
+      mouse.x
+    )}px -${calculateTextShadow(mouse.y)}px 6px whitesmoke`; // Note to self: right bottom, left bottom, right top, left top
+  };
   const iconStyles = {
     textShadow:
       '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
@@ -64,8 +85,7 @@ const Banner = props => {
             weight="bold"
             style={{
               color: 'black',
-              textShadow:
-                '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
+              textShadow: getTextShadow(props.mouseLocation),
             }}
           >
             TERRY CREAMER
