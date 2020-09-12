@@ -6,7 +6,6 @@ import Banner from '../components/layout/Banner';
 import Section from 'react-bulma-components/lib/components/section';
 import Container from 'react-bulma-components/lib/components/container';
 import Content from 'react-bulma-components/lib/components/content';
-import { getTestimonial } from '../components/layout/Testimonial';
 import TrackMouse from '../components/utils/TrackMouse';
 
 const Index = () => {
@@ -35,17 +34,52 @@ const Index = () => {
       }
     }
   `);
-  const [test, setTest] = useState(getTestimonial());
-  const handleTestUpdate = () => {
-    setTest(getTestimonial());
+
+  const originalTestimonialState = {
+    used: [],
+    unused: [
+      '9/10 say "Pretty good guy."',
+      '4.90 Uber rating.',
+      'Decades of React.js experience.',
+      '"Certified Fresh" by critics on Rotten Tomatoes (86% audience score).',
+      'Fitbit "High Tops" badge recipient.',
+      'Pickup soccer Sportsmanship award 3x nominee.',
+      '"Smarter than a cartoon owl professor." -Smart speakers everywhere',
+      'When boarding the metro, moves to the center of the car.',
+      'The most modest person ever.',
+      'Consecutive annual attendance awardee (2nd and 3rd grade).',
+      'A joy to have in class.',
+    ],
+    current: '100% library book return rate.',
   };
+
+  const [testimonials, setTestimonials] = useState(originalTestimonialState);
+
+  const handleTestUpdate = () => {
+    //
+    const getRandomIndex = () =>
+      Math.floor(Math.random() * testimonials.unused.length);
+    if (testimonials.unused.length === 0) {
+      setTestimonials(originalTestimonialState);
+    } else {
+      let testimonialOptions = testimonials.unused;
+      let newTestimonial = testimonialOptions.splice(getRandomIndex(), 1)[0];
+      setTestimonials({
+        unused: testimonialOptions,
+        current: newTestimonial,
+        used: [...testimonials.used, newTestimonial],
+      });
+    }
+    return testimonials.current;
+  };
+
   return (
     <TrackMouse
       render={state => {
         return (
           <Layout>
             <Banner
-              testimonial={test}
+              testimonial={testimonials.current}
               refreshTestimonial={handleTestUpdate}
               mouseLocation={state}
             />
