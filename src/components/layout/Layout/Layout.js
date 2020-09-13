@@ -23,7 +23,7 @@ const TemplateWrapper = ({ children }) => (
       />
       <meta property="og:type" content="article" />
       {/* multiple link elements */}
-      <link rel="canonical" href="https://terrycreamer.codes" />
+      <link rel="canonical" href={`${process.env.PERSONAL_SITE_URL}`} />
       <link rel="icon" href={favicon} />
       {/* <link
         rel="apple-touch-icon"

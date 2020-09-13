@@ -5,20 +5,28 @@ import Tile from 'react-bulma-components/lib/components/tile';
 import Box from 'react-bulma-components/lib/components/box';
 import Section from 'react-bulma-components/lib/components/section';
 import Heading from 'react-bulma-components/lib/components/heading';
-import Container from 'react-bulma-components/lib/components/container';
 import BackgroundImage from 'gatsby-background-image';
+import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default class PostList extends React.Component {
   render() {
-    const { posts, title, size } = this.props;
+    const { posts, title } = this.props;
     return (
       <>
         <Heading
-          size={4}
+          size={5}
           style={{
             alignContent: 'center',
             textAlign: 'center',
             paddingTop: '2rem',
+            // color: 'whitesmoke',
+            // fontWeight: '400',
+            textDecoration: 'underline',
+            // fontStyle: 'italic',
+            // fontSize: '1.2rem'
+            color: 'black',
+            textShadow:
+              '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
           }}
         >
           {title}
@@ -67,6 +75,7 @@ export default class PostList extends React.Component {
                         width: '100%',
                         display: 'flex',
                       }}
+                      aria-label={`${post.title}`}
                     >
                       <BackgroundImage
                         fixed={
@@ -97,7 +106,10 @@ export default class PostList extends React.Component {
                               alignItems: 'center',
                             }}
                           >
-                            <Heading size={4} style={{ textAlign: 'center' }}>
+                            <Heading
+                              size={4}
+                              style={{ textAlign: 'center', color: 'black' }}
+                            >
                               {post.title ? post.title : '[Untitled]'}
                             </Heading>
                           </Section>

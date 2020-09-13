@@ -101,6 +101,7 @@ const Banner = props => {
                 boxShadow:
                   '1px 1px 6px whitesmoke, -1px 1px 6px whitesmoke, 1px -1px 6px whitesmoke, -1px -1px 6px whitesmoke',
               }}
+              aria-label="Refresh testimonial button"
             >
               <Refresh
                 style={iconStyles}

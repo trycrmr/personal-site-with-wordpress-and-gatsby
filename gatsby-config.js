@@ -5,6 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'TERRY CREAMER',
+    siteUrl: `${process.env.PERSONAL_SITE_PROTOCOL}://${process.env.PERSONAL_SITE_URL}`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -34,6 +35,39 @@ module.exports = {
         anonymize: true,
       },
     },
+    'gatsby-plugin-sitemap', // Only runs in production (NODE_ENV=production)
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => process.env.NODE_ENV,
+        production: {
+          policy: [
+            {
+              userAgent: '*',
+              allow: ['/'],
+            },
+          ],
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        // configs: https://web.dev/add-manifest/
+        name: `Terry Creamer's Personal Site`,
+        short_name: `Terry Creamer`,
+        start_url: `/`,
+        background_color: `#000`,
+        theme_color: `#f5f5f5`,
+        display: `minimal-ui`,
+        icon: 'src/images/favicon-32x32.png',
+        icon_options: {
+          // More options https://developer.mozilla.org/en-US/docs/Web/Manifest
+          purpose: 'maskable',
+        },
+      },
+    },
+    'gatsby-plugin-offline',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
