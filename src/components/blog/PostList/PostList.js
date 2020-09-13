@@ -6,7 +6,6 @@ import Box from 'react-bulma-components/lib/components/box';
 import Section from 'react-bulma-components/lib/components/section';
 import Heading from 'react-bulma-components/lib/components/heading';
 import BackgroundImage from 'gatsby-background-image';
-import { irBlack } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default class PostList extends React.Component {
   render() {
