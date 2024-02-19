@@ -106,25 +106,9 @@ const Index = () => {
                       >
                         A
                       </span>
-                      n ambitious professional and Founder of Grounded IT
-                      Solutions LLC (“Grounded IT”), an IT training and services
-                      company. Proven experience delivering customer needs in
+                      n ambitious professional with proven experience delivering customer needs in
                       Full-Stack, DevOps, Cloud, and network-isolated
-                      applications. Primarily works on Node.js w/ React
-                      applications hosted on AWS. Has worked as a developer or
-                      managed applications written in PHP, Python, and Ruby, and
-                      has similar experience with SQL and NoSQL databases.
-                      Algorithm experience includes converting time series
-                      datasets into hierarchical, hashmap referenceable tree
-                      structures, resulting in a population-adjusted, global,
-                      over-time, low-bandwidth COVID-19 aggregates analysis
-                      dashboard with planetary to U.S. County granularity served
-                      as a serverless, single page application. Managerial
-                      experience includes overseeing several practitioners and a
-                      portfolio of web applications for the State Department's
-                      Office of eDiplomacy. This website was built with GatsbyJS
-                      and uses a "Headless" WordPress site for content
-                      management. Generally considered to be a decent human
+                      applications. Generally considered to be a decent human
                       being. Based in Washington, DC.
                     </p>
                   </Content>
